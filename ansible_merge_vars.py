@@ -81,7 +81,8 @@ class ActionModule(ActionBase):
 
         return {
             'ansible_facts': {merged_var_name: merged},
-            'ansible_facts_cacheable': cacheable,
+            'ansible_facts_cacheable': cacheable, # pre-2.4 naming - https://github.com/ansible/ansible/pull/32302
+            '_ansible_facts_cacheable': cacheable, # 2.4 and later
             'changed': False,
         }
 
